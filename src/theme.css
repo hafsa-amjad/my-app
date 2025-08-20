@@ -1,33 +1,39 @@
-/* === Theme toggle placement + icon styling === */
-.toolbar {
-  position: fixed;
-  top: 12px;
-  right: 12px;
-  z-index: 10;
+/* Light theme (default) */
+:root,
+html[data-theme="light"] {
+  --bg: #ffffff;
+  --fg: #0f172a;
+  --muted: #475569;
+  --card: #f8fafc;
+  --border: #e2e8f0;
+
+  --accent: #2563eb;
+  --accent-ink: #ffffff;
+
+  --done: #22c55e;
+  --danger: #ef4444;
+
+  --shadow: 0 10px 20px rgba(0,0,0,.06);
+  color-scheme: light;
 }
 
-/* Reuse .button styles and enhance for the theme toggle */
-.button.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  padding: .45rem .75rem;        /* a bit tighter */
-  line-height: 1;
+/* Dark theme (override when the html has data-theme="dark") */
+html[data-theme="dark"] {
+  --bg: #0b1220;
+  --fg: #e5e7eb;
+  --muted: #94a3b8;
+  --card: #0f172a;
+  --border: #1f2a44;
+
+  --accent: #60a5fa;
+  --accent-ink: #0b1220;
+
+  --done: #34d399;
+  --danger: #f87171;
+
+  --shadow: 0 10px 20px rgba(0,0,0,.45);
+  color-scheme: dark;
 }
 
-/* The icon (emoji or SVG) sits here */
-.button.theme-toggle .icon {
-  width: 1.15rem;
-  height: 1.15rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.05rem;            /* emoji size */
-  line-height: 1;
-  filter: drop-shadow(0 1px 0 rgba(0,0,0,.15));
-}
-
-/* Optional: hide the text on very small screens, keep the icon */
-@media (max-width: 420px) {
-  .button.theme-toggle .label { display: none; }
-}
+/* (optional) hard check — ensures background flips even if variables were cached */
+html[data-theme="dark"] body { background: #0b1220 !important; }

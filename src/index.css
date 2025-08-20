@@ -1,42 +1,84 @@
-/* === THEME OVERRIDES (put at the very bottom of index.css) === */
-body {
+/* === Layout & sizing (your original look) === */
+.to-do-list{
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 100px;
+}
+
+h1{
+  font-size: 4rem;
+  margin: 0 0 1rem;
+}
+
+button{
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.add-button{
+  /* keep your green "Add" button */
+  background-color: hsl(125, 47%, 54%);
+  color: #fff;
+}
+.add-button:hover{ background-color: hsl(125, 47%, 44%); }
+
+.delete-button{
+  background-color: hsl(10, 90%, 50%);
+  color: #fff;
+}
+.delete-button:hover{ background-color: hsl(10, 90%, 40%); }
+
+.move-button{
+  background-color: hsl(207, 90%, 64%);
+  color: #fff;
+}
+.move-button:hover{ background-color: hsl(207, 90%, 54%); }
+
+input[type="text"]{
+  font-size: 1.6rem;
+  padding: 10px;
+  border: 2px solid hsla(0, 0%, 80%, 0.5);
+  border-radius: 5px;
+}
+
+ol{ padding: 0; }
+li{
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+.text{ flex: 1; }
+
+/* === Theme-driven colors (use variables from theme.css) === */
+body{
+  margin: 0;
   background: var(--bg) !important;
   color: var(--fg) !important;
 }
 
-h1 { color: var(--fg) !important; }
+h1{ color: var(--fg) !important; }
 
-input[type="text"] {
+input[type="text"]{
   background: var(--card) !important;
   color: var(--fg) !important;
-  border: 1px solid var(--border) !important;
+  border-color: var(--border) !important;
 }
+input::placeholder{ color: var(--muted) !important; }
 
-ol { padding: 0; }
-
-li {
+li{
   background: var(--card) !important;
   color: var(--fg) !important;
   border: 3px solid var(--border) !important;
 }
 
-.add-button {
-  background: var(--accent) !important;
-  color: var(--accent-ink) !important;
-  border: none !important;
-}
-
-.delete-button {
-  background: var(--danger) !important;
-  color: #fff !important;
-}
-
-.move-button {
-  background: var(--card) !important;
-  color: var(--fg) !important;
-  border: 1px solid var(--border) !important;
-}
-.move-button:hover { background: var(--border) !important; }
-
-/* show the toggle in the top-right */
-.toolbar { position: fixed; top: 12px; right: 12px; z-index: 10; }
+/* keep the toggle in the corner */
+.toolbar{ position: fixed; top: 12px; right: 12px; z-index: 10; }
