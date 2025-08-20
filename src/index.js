@@ -1,6 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+
+// NEW: theme boot (sets <html data-theme="..."> before app renders)
+import './themeBoot';
+
+// NEW: theme styles (CSS variables + base styles)
+// keep this AFTER index.css so it can override any base styles
+import './theme.css';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
