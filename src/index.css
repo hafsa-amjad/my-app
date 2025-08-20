@@ -1,69 +1,42 @@
-body{
-    background-color: hsl(0, 0%, 10%);
+/* === THEME OVERRIDES (put at the very bottom of index.css) === */
+body {
+  background: var(--bg) !important;
+  color: var(--fg) !important;
 }
-.to-do-list{
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 100px;
+
+h1 { color: var(--fg) !important; }
+
+input[type="text"] {
+  background: var(--card) !important;
+  color: var(--fg) !important;
+  border: 1px solid var(--border) !important;
 }
-h1{
-    font-size: 4rem;
-    color: white;
+
+ol { padding: 0; }
+
+li {
+  background: var(--card) !important;
+  color: var(--fg) !important;
+  border: 3px solid var(--border) !important;
 }
-button{
-    font-size: 1.7rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.5s ease;
+
+.add-button {
+  background: var(--accent) !important;
+  color: var(--accent-ink) !important;
+  border: none !important;
 }
-.add-button{
-    background-color: hsl(125, 47%, 54%);
+
+.delete-button {
+  background: var(--danger) !important;
+  color: #fff !important;
 }
-.add-button:hover{
-    background-color: hsl(125, 47%, 44%);
+
+.move-button {
+  background: var(--card) !important;
+  color: var(--fg) !important;
+  border: 1px solid var(--border) !important;
 }
-.delete-button{
-    background-color: hsl(10, 90%, 50%);
-}
-.delete-button:hover{
-    background-color: hsl(10, 90%, 40%);
-}
-.move-button{
-    background-color: hsl(207, 90%, 64%);
-}
-.move-button:hover{
-    background-color: hsl(207, 90%, 54%);
-}
-input[type="text"]{
-    font-size: 1.6rem;
-    padding: 10px;
-    border: 2px solid hsla(0, 0%, 80%, 0.5);
-    border-radius: 5px;
-    color: hsla(0, 0%, 0%, 0.5);
-}
-ol{
-    padding: 0;
-}
-li{
-    font-size: 2rem;
-    font-weight: bold;
-    padding: 15px;
-    background-color: hsl(0, 0%, 97%);
-    margin-bottom: 10px;
-    border: 3px solid hsla(0, 0%, 85%, 0.75);
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-}
-.text{
-    flex: 1;
-}
-.delete-button, .move-button{
-    padding: 8px 12px;
-    font-size: 1.4rem;
-    margin-left: 10px;
-}
+.move-button:hover { background: var(--border) !important; }
+
+/* show the toggle in the top-right */
+.toolbar { position: fixed; top: 12px; right: 12px; z-index: 10; }
